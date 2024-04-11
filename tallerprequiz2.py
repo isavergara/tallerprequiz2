@@ -49,28 +49,53 @@ print("Columns:", df.columns)
 
 # 6. Crear una función que permita cargar un archivo .mat y .csv
 
-def cargar_archivos(ruta_mat, ruta_csv):
-    # Cargar archivo .mat
-    mat = sio.loadmat(ruta_mat)
+def load_files(mat_file, csv_file):
+    mat = sio.loadmat(mat_file)
     matriz_mat = mat.get('matriz', np.empty((0,0)))
 
-    # Cargar archivo .csv
-    df_csv = pd.read_csv(ruta_csv)
+    df_csv = pd.read_csv(csv_file)
 
-    # Devolver ambos datos
     return matriz_mat, df_csv
-#Funciones
-def sum_array(arr, axis=None):
-    return np.sum(arr, axis=axis)
-def subtract_array(arr, val, axis=None):
-    return np.subtract(arr, val, axis=axis)
-def multiply_array(arr1, arr2, axis=None):
-    return np.multiply(arr1, arr2, axis=axis)
-def divide_array(arr1, arr2, axis=None):
-    return np.divide(arr1, arr2, axis=axis)
-def log_array(arr, axis=None):
-    return np.log(arr, out=np.zeros_like(arr), axis=axis)
-def average_array(arr, axis=None):
-    return np.mean(arr, axis=axis)
-def std_array(arr, axis=None):
-    return np.std(arr, axis=axis)
+
+def display_menu():
+    print("\nSelect an option:")
+    print("1. Calculate sum of array")
+    print("2. Calculate mean of array")
+    print("3. Calculate standard deviation of array")
+    print("4. Calculate maximum value of array")
+    print("5. Calculate minimum value of array")
+    print("6. Load .mat and .csv files")
+    print("7. Exit")
+
+    option = int(input("Enter option number: "))
+    return option
+
+def process_array(option, array):
+    if option == 1:
+        axis = int(input("Enter axis number: "))
+        result = sum_array(array, axis=axis)
+        print("Sum of array:", result)
+    elif option == 2:
+        axis = int(input("Enter axis number: "))
+        result = mean_array(array, axis=axis)
+        print("Mean of array:", result)
+    elif option == 3:
+        axis = int(input("Enter axis number: "))
+        result = std_array(array, axis=axis)
+        print("Standard deviation of array:", result)
+    elif option == 4:
+        axis = int(input("Enter axis number: "))
+        result = max_array(array, axis=axis)
+        print("Maximum value of array:", result)
+    elif option == 5:
+        axis = int(input("Enter axis number: "))
+        result = min_array(array, axis)
+        print("Minimum value of array:", result)
+    elif option == 6:
+        ruta_mat = input("Enter .mat file path: ")
+        ruta_csv = input("Enter .csv file path: ")
+        matriz_mat, df_csv = load_files(ruta_mat, ruta_csv)
+        print("Matriz cargada desde .mat file:")
+        print(matriz_mat)
+        print("DataFrame cargado desde .csv file:")
+        print(df_csv)
