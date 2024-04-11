@@ -15,8 +15,13 @@ print(matriz)
 # Crear una copia de la matriz anterior con solo 3 dimensiones
 matriz_3d = matriz.copy()[:, :, :, 0]
 
-# Imprimir la matriz 3D, dimensiones y tamaño
-print("\nMatriz de 3 dimensiones:")
-print(matriz_3d)
-print("\nDimensiones:", matriz_3d.ndim)
+
+#3. De lamatriz 3D, muestra todos los atributos propios de dicha matriz , dimensión, tamaño, etc..
+
+#tipo de dato y tamaño
+print("\ndtype:", matriz_3d.dtype)
+print("itemsize:", matriz_3d.itemsize)
+
+#imprimir dimensión y tamaño total
+print("\nShape:", matriz_3d.shape)
 print("Tamaño:", matriz_3d.size)
