@@ -46,3 +46,16 @@ print("Size:", df.size)
 print("Dtypes:", df.dtypes)
 print("Index:", df.index)
 print("Columns:", df.columns)
+
+# 6. Crear una función que permita cargar un archivo .mat y .csv
+
+def cargar_archivos(ruta_mat, ruta_csv):
+    # Cargar archivo .mat
+    mat = sio.loadmat(ruta_mat)
+    matriz_mat = mat.get('matriz', np.empty((0,0)))
+
+    # Cargar archivo .csv
+    df_csv = pd.read_csv(ruta_csv)
+
+    # Devolver ambos datos
+    return matriz_mat, df_csv
