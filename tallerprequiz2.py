@@ -59,3 +59,18 @@ def cargar_archivos(ruta_mat, ruta_csv):
 
     # Devolver ambos datos
     return matriz_mat, df_csv
+#Funciones
+def sum_array(arr, axis=None):
+    return np.sum(arr, axis=axis)
+def subtract_array(arr, val, axis=None):
+    return np.subtract(arr, val, axis=axis)
+def multiply_array(arr1, arr2, axis=None):
+    return np.multiply(arr1, arr2, axis=axis)
+def divide_array(arr1, arr2, axis=None):
+    return np.divide(arr1, arr2, axis=axis)
+def log_array(arr, axis=None):
+    return np.log(arr, out=np.zeros_like(arr), axis=axis)
+def average_array(arr, axis=None):
+    return np.mean(arr, axis=axis)
+def std_array(arr, axis=None):
+    return np.std(arr, axis=axis)
