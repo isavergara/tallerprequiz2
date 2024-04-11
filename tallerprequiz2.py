@@ -25,3 +25,13 @@ print("itemsize:", matriz_3d.itemsize)
 #imprimir dimensión y tamaño total
 print("\nShape:", matriz_3d.shape)
 print("Tamaño:", matriz_3d.size)
+
+#4 Modificar su forma y pasarla a 2D
+# Modificar forma con reshape
+array_2d = matriz.reshape((10 * 10, 10 * 120))
+
+
+print("\nDimensions:", array_2d.ndim)
+print("Shape:", array_2d.shape)
+print("Size:", array_2d.size)
+
