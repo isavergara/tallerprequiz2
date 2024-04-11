@@ -35,3 +35,14 @@ print("\nDimensions:", array_2d.ndim)
 print("Shape:", array_2d.shape)
 print("Size:", array_2d.size)
 
+#5 Convertir la matriz 2D a un DataFrame de Pandas
+df = pd.DataFrame(array_2d)
+
+# Imprimir atributos del DataFrame
+print("\nDataFrame:")
+print("Dimensions:", df.ndim)
+print("Shape:", df.shape)
+print("Size:", df.size)
+print("Dtypes:", df.dtypes)
+print("Index:", df.index)
+print("Columns:", df.columns)
